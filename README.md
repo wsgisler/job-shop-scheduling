@@ -9,7 +9,7 @@ Job shop scheduling problems are complicated combinatorial problems. They are wi
 
 Constraint programming solvers have also been used widely. They allow rapid prototyping and fast adjustments of the code to meet varying real life constraints, which is often more challenging with custom built heuristics.
 
-I have been using CpOptimizer, which is distributed as part of the IBM Cplex Studio almost exclusively for scheduling problems that have elements of job shop scheduling problems. However, CpOptimizer is expensive, which is why alternatives are needed. It is hard to compare constraint programming solvers, because they don't use a common input format (like for example MIP solvers). That makes benchmarking them more challenging, because it means that for each of them, a custom model has to be written (unless you use MiniZinc, but even that doesn't support all solvers). I therefore decided to implement some common problems, for which benchmarking instances exist using CpOptimizer and other, freely available optimizers.
+I have been using CP Optimizer, which is distributed as part of the IBM CPLEX Studio almost exclusively for scheduling problems that have elements of job shop scheduling problems. However, CP Optimizer is expensive, which is why alternatives are needed. It is hard to compare constraint programming solvers, because they don't use a common input format (like for example MIP solvers). That makes benchmarking them more challenging, because it means that for each of them, a custom model has to be written (unless you use MiniZinc, but even that doesn't support all solvers). I therefore decided to implement some common problems, for which benchmarking instances exist using CpOptimizer and other, freely available optimizers.
 
 ## What is the job shop scheduling problem?
 
@@ -53,7 +53,7 @@ The format can be read as follows:
 
 ## Solvers
 
-- CpOptimizer: https://www.ibm.com/analytics/cplex-cp-optimizer
+- CP Optimizer: https://www.ibm.com/analytics/cplex-cp-optimizer
 - OR-Tools: https://developers.google.com/optimization
 - CPLEX (for a MIP implementation)
 

@@ -1,6 +1,6 @@
 # Job Shop Scheduling
 
-Walter Sebastian Gisler
+Walter Sebastian Gisler //
 May 9, 2020
 
 ## Motivation

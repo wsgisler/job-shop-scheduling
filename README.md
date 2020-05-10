@@ -55,6 +55,7 @@ The format can be read as follows:
 
 - CpOptimizer: https://www.ibm.com/analytics/cplex-cp-optimizer
 - OR-Tools: https://developers.google.com/optimization
+- CPLEX (for a MIP implementation)
 
 ## Benchmarking setup
 

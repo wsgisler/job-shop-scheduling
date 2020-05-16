@@ -78,7 +78,7 @@ class Reader:
                         line = line.replace('   ', ' ')
                         line = line.replace('  ', ' ')
                         line = line.replace('\n', '')
-                        elements = line.split(' ')
+                        elements = line.strip().split(' ')
                         if len(elements) == 2: # first actual line contains problem specification: number of jobs, number of machines
                             num_jobs = int(elements[0])
                             num_machines = int(elements[1])
@@ -139,7 +139,7 @@ class Solution:
         # draw the time grid
         max_time = self.get_makespan()
         max_height = len(instance.machines)*(line_spacing + line_height)+line_height
-        for t in range(time_grid, int(max_time+time_grid*2), time_grid):
+        for t in range(time_grid, max_time+time_grid*2, time_grid):
             f.write('<div style="position:absolute; left: %ipx; top: 0px; height: %ipx; width: 0px; border-style: solid; border-width: 0.5px; border-color: black"></div>\n'%(x_offset + t*time_factor, max_height))
             f.write('<div style="position:absolute; left: %ipx; top: %ipx; height: 20px; width: 50px; margin-left: -25px; border: 0; text-align: center">%i</div>\n'%(x_offset + t*time_factor, max_height+line_spacing, t))
         # then draw each task

@@ -141,4 +141,6 @@ For the 4 thread scenario, the gap after 10 seconds is smaller: 3-4% and given a
 
 CP Optimizer clearly wins the simple job shop instances but even there, the gap is not very big.
 
-Overall, OR-Tools performed very well and for the fact that it is available for free, it does an amazing job. 
+Overall, OR-Tools performed very well and for the fact that it is available for free, it does an amazing job.
+
+I came across a paper that does a very similar comparison here: https://arxiv.org/pdf/1909.08247.pdf

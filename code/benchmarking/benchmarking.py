@@ -7,15 +7,15 @@ from utils.objects import *
 from time import time
 from job_shop_blocking.blocking_job_shop_cpoptimizer import optimize as opt1
 from job_shop_blocking.blocking_job_shop_ortools import optimize as opt2
-from job_shop_simple.simple_job_shop_cpoptimizer import optimize as opt3
-from job_shop_simple.simple_job_shop_ortools import optimize as opt4
-from job_shop_simple.blocking_job_shop_mip import optimize as opt5
+from job_shop_blocking.blocking_job_shop_mip import optimize as opt3
+from job_shop_simple.simple_job_shop_cpoptimizer import optimize as opt4
+from job_shop_simple.simple_job_shop_ortools import optimize as opt5
 from job_shop_simple.simple_job_shop_mip import optimize as opt6
 
 def optimize_and_visualize(instance_name, time_limit = 100, threads = 1):
     reader = Reader(instance_name)
     instance = reader.get_instance()
-    solution = optimize(instance, time_limit = time_limit, threads = threads)
+    solution = optimize(instance, time_limit = time_limit, threads = threads) # Replace optimize with the optimizer (opt1-opt6) that you want to use
     solution.visualize(time_factor = 1, time_grid = 50)
     
 if __name__ == '__main__':
@@ -39,11 +39,11 @@ if __name__ == '__main__':
                     opt = 'True' if time()-st < time_limit else 'False'
                     stats.write('%s,Blocking,ORTOOLS,%i,%i,%i,%f,%s\n'%(instance.name,time_limit,threads,attempt,solution.get_makespan(),opt))
                     st = time()
-                    solution = opt5(instance, time_limit = time_limit, threads = threads)
+                    solution = opt3(instance, time_limit = time_limit, threads = threads)
                     opt = 'True' if time()-st < time_limit else 'False'
                     stats.write('%s,Blocking,MIPCPLEX,%i,%i,%i,%f,%s\n'%(instance.name,time_limit,threads,attempt,solution.get_makespan(),opt))
                     st = time()
-                    solution = opt3(instance, time_limit = time_limit, threads = threads)
+                    solution = opt4(instance, time_limit = time_limit, threads = threads)
                     opt = 'True' if time()-st < time_limit else 'False'
                     stats.write('%s,Simple,CPOPT,%i,%i,%i,%f,%s\n'%(instance.name,time_limit,threads,attempt,solution.get_makespan(),opt))
                     st = time()
